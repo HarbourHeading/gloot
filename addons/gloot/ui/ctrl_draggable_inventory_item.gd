@@ -58,11 +58,11 @@ func _get_drag_data(at_position: Vector2) -> Variant:
     if item == null:
         return null
     
-    scale = get_global_transform().get_scale() 
-    var size: Vector2 = _ctrl_inventory_item.size 
-    var scaled_size: Vector2 = scale * size 
-    var scaled_pos: Vector2  = scale * at_position
-    _grab_offset = scaled_pos / size + scaled_size / 2
+    var item_scale: Vector2 = get_global_transform().get_scale() 
+    var item_size: Vector2 = _ctrl_inventory_item.size 
+    var scaled_size: Vector2 = item_scale * item_size 
+    var scaled_pos: Vector2  = item_scale * at_position
+    _grab_offset = scaled_pos / item_size + scaled_size / 2
     
     var sub_preview: Control = null
     
